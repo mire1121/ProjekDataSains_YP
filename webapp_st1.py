@@ -4,7 +4,6 @@ import numpy as np
 import pickle
 import seaborn as sns
 import matplotlib.pyplot as plt
-import time
 
 # ---------------------------
 # Helper Functions to Load Resources
@@ -20,10 +19,10 @@ def load_model():
 def load_data():
     """Load the dataset for insights and visualizations."""
     try:
-        df = pd.read_excel('V4. Final Feature Engineering.xlsx')
+        df = pd.read_csv('V4. Final Feature Engineering.csv')
         return df
     except Exception as e:
-        st.error("Dataset not found. Please ensure 'df4.csv' is in the working directory.")
+        st.error("Dataset not found. Please ensure 'V4. Final Feature Engineering.xlsx' is in the working directory.")
         return None
 
 
@@ -52,7 +51,10 @@ def eda():
                    "Day of Week", "Month", "Quarter", "Year", "Channel Size", "Category Definition", 
                    "Audio Language Name", "Channel Country Name", "Publish Hour", "Time of Day",
                    "Sentiment Category"]
-    df_categorical = df[categorical]
+    if df is not None:
+        df_numerical = df[numerical]
+    else:
+        st.error("Data failed to load. Please check the source.")
 
     tab1, tab2, tab3, tab4, tab5 = st.tabs(["Descriptive Statistics", "Feature Elements","Correlation Heatmap", "Feature Distributions", "Scatter Plot"])
     with tab1:
