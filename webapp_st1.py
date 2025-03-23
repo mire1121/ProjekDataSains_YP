@@ -51,7 +51,10 @@ def eda():
                    "Day of Week", "Month", "Quarter", "Year", "Channel Size", "Category Definition", 
                    "Audio Language Name", "Channel Country Name", "Publish Hour", "Time of Day",
                    "Sentiment Category"]
-    df_categorical = df[categorical]
+    if df is not None:
+        df_numerical = df[numerical]
+    else:
+        st.error("Data failed to load. Please check the source.")
 
     tab1, tab2, tab3, tab4, tab5 = st.tabs(["Descriptive Statistics", "Feature Elements","Correlation Heatmap", "Feature Distributions", "Scatter Plot"])
     with tab1:
