@@ -22,7 +22,7 @@ def load_data():
         df = pd.read_excel('V4. Final Feature Engineering.xlsx')
         return df
     except Exception as e:
-        st.error("Dataset not found. Please ensure 'df4.csv' is in the working directory.")
+        st.error("Dataset not found. Please ensure 'V4. Final Feature Engineering.xlsx' is in the working directory.")
         return None
 
 
