@@ -283,12 +283,12 @@ def model_dev():
     with st.expander("Our Approach"):
         st.image("model_development.png")
         approach = pd.DataFrame({
-                "Main Points": ["Maximizing Data Utility with Cross-Validation (K-Fold)", 
-                                "Balancing Overfitting and Underfitting with Hyperparameter Tuning", 
-                                "Comprehensive Evaluation: Train-Validate-Test Approach"],
-                "Descriptions": ["Given that our dataset consists of just over 6000 samples—a relatively small amount—we employed k-fold cross-validation to maximize its potential. By averaging out the randomness inherent in any single train-test split, cross-validation provides a more accurate measure of model performance and ensures robust evaluation.", 
-                                 "To achieve the right balance between overfitting and underfitting, we fine-tuned model hyperparameters using grid search. This systematic approach helps identify the optimal settings that allow our models to fit the training data well while generalizing effectively to new data.", 
-                                 "Our approach uses a three-way split—train, validate, and test—to ensure robust model selection. Cross-validation is applied to tune hyperparameters, while the validation set allows us to compare different models and select a champion, with the test set ultimately confirming the model’s generalization capability."]
+                "Main Points": ["Comprehensive Evaluation: Train-Validate-Test Approach",
+                                "Maximizing Data Utility with Cross-Validation (K-Fold)", 
+                                "Balancing Overfitting and Underfitting with Hyperparameter Tuning"],
+                "Descriptions": ["Our approach uses a three-way split—train, validate, and test—to ensure robust model selection. Cross-validation is applied to tune hyperparameters, while the validation set allows us to compare different models and select a champion, with the test set ultimately confirming the model’s generalization capability.",
+                                 "Given that our dataset consists of just over 6000 samples—a relatively small amount—we employed k-fold cross-validation to maximize its potential. By averaging out the randomness inherent in any single train-test split, cross-validation provides a more accurate measure of model performance and ensures robust evaluation.", 
+                                 "To achieve the right balance between overfitting and underfitting, we fine-tuned model hyperparameters using grid search. This systematic approach helps identify the optimal settings that allow our models to fit the training data well while generalizing effectively to new data."]
             })
         st.table(approach)
         
