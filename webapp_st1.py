@@ -109,11 +109,11 @@ def eda():
         )
         
         # Create the heatmap figure
-        fig2, ax2 = plt.subplots(figsize=(10, 8))
-        corr_matrix = df_corr.corr()
-        sns.heatmap(corr_matrix, annot=True, fmt=".2f", cmap="coolwarm", ax=ax2)
-        
-        st.pyplot(fig2)
+        #fig2, ax2 = plt.subplots(figsize=(10, 8))
+        #corr_matrix = df_corr.corr()
+        #sns.heatmap(corr_matrix, annot=True, fmt=".2f", cmap="coolwarm", ax=ax2)
+        #st.pyplot(fig2)
+        st.image("correlation_heatmap.png")
 
     with tab4:
         st.markdown(
