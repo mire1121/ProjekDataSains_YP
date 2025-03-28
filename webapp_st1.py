@@ -159,8 +159,6 @@ def eda():
 def features_selection():
     st.title("Features Selection")
     st.markdown("---")
-    st.subheader("Realizing that 27 features are too many, we decided to reduce them to focus on the most impactful ones.")
-    st.markdown("---")
     # Section 1: 3-Column Table of Eliminated Features
     st.header("1. Irrelevant Features Elimination")
     st.markdown(
@@ -225,7 +223,9 @@ def features_selection():
     data_importance["Average"] = avg_values
     
     importance_df = pd.DataFrame(data_importance).set_index("Feature")
-
+    
+    st.markdown("---")
+    st.subheader("Realizing that 27 features are too many, we decided to reduce them to focus on the most impactful ones.")
     st.markdown("---")
     st.header("2. Key Features Selection")
     st.subheader("A. Features Importance")
